@@ -1,0 +1,101 @@
+{% extends 'base.html' %} {% load static %} {%block content %}
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">CSET</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard v1</li>
+          </ol>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+        <h1>Assessment Configuration</h1>
+        <h3>Demographics</h3>
+    </h1>
+        <form action="/demographics" method="POST">{% csrf_token %}
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Sector</label>
+                <input type="text" class="form-control" id="inputEmail4" name="sector" placeholder="Sector Name">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Industry</label>
+                <input type="text" class="form-control" id="inputPassword4" name="industry" placeholder="Industry">
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4">What is the gross value of the asset you are trying to protect?</label>
+                    <input type="text" class="form-control" id="inputEmail4" name="grossvalueofasset" placeholder="What is the gross value of the asset you are trying to protect?">
+                  </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4">What is the relative expected effort for this assessment?</label>
+                    <input type="text" class="form-control" id="inputEmail4" name="expected_effort" placeholder="What is the relative expected effort for this assessment?">
+                  </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4">Name of Organization</label>
+                    <input type="text" class="form-control" id="inputEmail4" name="organisation_name" placeholder="Name of Organization">
+                  </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4">Business Unit/Agency</label>
+                    <input type="text" class="form-control" id="inputEmail4" name="business_unit" placeholder="Business Unit/Agency">
+                  </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4">Organization Type</label>
+                    <input type="text" class="form-control" id="inputEmail4" name="organization_type" placeholder="Organization Type">
+                  </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">Facilitator</label>
+                <input type="text" class="form-control" id="inputCity" name="facilator">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputCity">
+                    Critical Service Point of Contact</label>
+                <input type="text" class="form-control" id="inputCity" name="critical_service_point">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck" name="include_other_enterprise_business_units" value="Maturity Model">
+                <label class="form-check-label" for="gridCheck">
+                    Please check this box if suppliers are scoped to include other enterprise business units
+                </label>
+              </div>
+            </div>
+           
+            <button type="submit" class="btn btn-primary">Next</button>
+          </form>
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
+{% endblock %}

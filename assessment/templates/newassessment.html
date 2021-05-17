@@ -1,0 +1,97 @@
+{% extends 'base.html' %} {% load static %} {%block content %}
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">CSET</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard v1</li>
+          </ol>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+        <h1>Assessment Configuration</h1>
+        <h3>Organization Details</h3>
+    </h1>
+        <form action="/newassessment" method="POST">{% csrf_token %}
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Assessment Name</label>
+                <input type="text" class="form-control" id="inputEmail4" name="assessment_name" placeholder="Assessment Name">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Assessment Date</label>
+                <input type="date" class="form-control" id="inputPassword4" name="assessment_date" placeholder="Assessment Date">
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4">Facility Name</label>
+                    <input type="text" class="form-control" id="inputEmail4" name="facility_name" placeholder="Facility Name">
+                  </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">City Or Site Name</label>
+                <input type="text" class="form-control" id="inputCity" name="city_name">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputCity">
+                    State/Province/Region</label>
+                <input type="text" class="form-control" id="inputCity" name="state_name">
+              </div>
+            </div>
+            <h1>
+                Assessment Options
+
+            </h1>
+            <p>Select the features that will be used to perform this assessment. Each feature can be expanded for additional information. More than one feature can be chosen for a more comprehensive assessment.</p>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck" name="assessment_option" value="Maturity Model">
+                <label class="form-check-label" for="gridCheck">
+                    Maturity Model
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck" name="assessment_option" value="Standard"> 
+                  <label class="form-check-label" for="gridCheck">
+                    Standard
+
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck" name="assessment_option" value="Network Diagram">
+                  <label class="form-check-label" for="gridCheck">
+                    Network Diagram
+                  </label>
+                </div>
+              </div>
+            <button type="submit" class="btn btn-primary">Next</button>
+          </form>
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
+{% endblock %}
